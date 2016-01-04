@@ -2,5 +2,12 @@ html
     head
         title Location Tagger
 
-    body
+        script(type='text/javascript', src='/bower_components/angular/angular.min.js')
+        script(type='text/javascript').
+            angular.module('LocationTagger', []);
+
+    body(ng-app='LocationTagger')
         h1 Welcome to Location Tagger
+
+        p.
+            Angular knows that 1 + 1 = {{ 1 + 1 }}
