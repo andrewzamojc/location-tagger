@@ -1,0 +1,19 @@
+{
+  "name": "location-tagger",
+  "version": "1.0.0",
+  "description": "An application that lets you pin and tag locations and search for them later.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewzamojc/location-tagger.git"
+  },
+  "author": "Andrew Zamojc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewzamojc/location-tagger/issues"
+  },
+  "homepage": "https://github.com/andrewzamojc/location-tagger#readme"
+}
