@@ -1,6 +1,13 @@
 Location Tagger
 ===============
 
+To run the app locally
+----------------------
+```sh
+npm install
+npm start
+```
+
 What words mean what
 --------------------
 pin: to pin a location is to save it to look up later
