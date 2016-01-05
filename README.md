@@ -8,6 +8,18 @@ npm install
 npm start
 ```
 
+To run the tests
+----------------
+```sh
+npm test
+```
+
+The Express server...
+---------------------
+* serves pages and static data like bower_components
+* compiles jade templates into html on the fly
+* compiles coffee-script source code into the dist folder for serving
+
 What words mean what
 --------------------
 * pin: to pin a location is to save it to look up later
