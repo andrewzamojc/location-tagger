@@ -3,11 +3,56 @@ html
         title Location Tagger
 
         script(type='text/javascript', src='/bower_components/angular/angular.min.js')
+        script(type='text/javascript', src='//www.parsecdn.com/js/parse-1.6.12.min.js')
         script(type='text/javascript').
-            angular.module('LocationTagger', []);
+            Parse.initialize("rcm8ngiAy0fdyPrOsMmr7WvD9GgYCYUrW2DROWOd", "MoTIrboBLNqVO4UZOPvX5rcAoNCy6x9A2OFt6iSw");
+
+            angular.module('LocationTagger', [])
+
+            .controller('SignUpController', function($scope) {
+                $scope.user = {
+                    username: 'andrewzamojc@gmail.com',
+                    email: 'andrewzamojc@gmail.com',
+                    password: '12345'
+                };
+
+                $scope.signUp = function(userData) {
+                    var user = new Parse.User();
+                    user.set("username", userData.email);
+                    user.set("password", userData.password);
+                    user.set("email", userData.email);
+
+                    console.log('signing up');
+
+                    user.signUp(null, {
+                          success: function(user) {
+                            console.log(user);
+                            alert("Success Finally!");
+                            //window.location.href = 'MainMenu.html';
+                            // Hooray! Let them use the app now.
+                          },
+                          error: function(user, error) {
+                            // Show the error message somewhere and let the user try again.
+                            console.log(user);
+                            alert("Error: " + error.code + "\n\nwhat is the error \n\n " + error.message);
+
+                          }
+                    });
+                };
+            })
 
     body(ng-app='LocationTagger')
         h1 Welcome to Location Tagger
 
         p.
             Angular knows that 1 + 1 = {{ 1 + 1 }}
+
+        form.signup-form(ng-controller='SignUpController')
+            .form-group
+                input(type='text', name='email', placeholder='email', ng-model='user.email')
+            .form-group
+                input(type='password', name='password', ng-model='user.password')
+
+            .actions
+                .actions__save
+                    input(type='submit', ng-click='signUp(user)', value='signUp')
