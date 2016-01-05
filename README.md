@@ -10,8 +10,8 @@ npm start
 
 What words mean what
 --------------------
-pin: to pin a location is to save it to look up later
-tag: tagging a pinned location means giving a word to associate with the location to search for later
+* pin: to pin a location is to save it to look up later
+* tag: tagging a pinned location means giving a word to associate with the location to search for later
 
 
 Technical Plan
